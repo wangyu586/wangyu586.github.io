@@ -16,7 +16,7 @@
 	
 	@font-face{
 		font-family:"my";
-		src:url("http://49.233.165.89/fonts/font.ttf");
+		src:url("./public/fonts/font.ttf");
 	}
 	
 	body{
@@ -25,22 +25,54 @@
 	
 	#container{
 		height:100vh;
-		background-color:#DCEDC8;
+		background-color:#F1F8E9;
 		font-family:"my";
 	}
 	
 	
-	.text{
-		height:100vh;
-		font-size:55px;
-		line-height:100vh;
+	.title{
+		height:50px;
+		font-size:25px;
+		line-height:50px;
 		text-align:center;
 	}
+	
+	#lists{
+		width:60vw;
+		margin: 20px auto;
+		list-style-type: none;
+	}
+	
+	#lists li{
+		display: block;
+		width:100%;
+		height: 50px;
+		/* border-bottom: 0.5px solid #666; */
+	}
+	
+	#lists a{
+		display: block;
+		width:100%;
+		text-decoration: none;
+		font-size: 18px;
+		color:#333;
+		line-height: 50px;
+		text-align: center;
+	}
+	
+	#lists a:hover{
+		transform: scale(1.05);
+		color:#3949AB;
+	}
+	
     </style>
 </head>
 <body>
 	<div id="container">
-		<div class="text">Hello,boys and girls.</div>
+		<div class="title">lists.</div>
+		<ul id="lists">
+			<li><a href="./pages/DataBinder.html">简单的数据绑定</a></li>
+		</ul>
 	</div>
 	<script>
 	

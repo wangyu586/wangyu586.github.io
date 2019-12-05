@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<script type="text/javascript" src="../public/js/DataBinder.js"></script>
+		<style>
+			#data{
+				width:200px;
+				height: 200px;
+				margin: 0 auto;
+				border:1px solid #000;
+			}
+			
+			.bg-red{
+				background: red;
+			}
+			
+			.bg-pink{
+				background: pink;
+			}
+				
+			.bg-green{
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='data' d-on:click="myClick" d-bind:class="myClass" >
+			<div id3="data1">
+				<div id3="data1-1">
+					<div id="data1-1-1">
+						我喜欢的颜色是{{color}}，我的名字是{{name}}
+					</div>
+				</div>
+				<div id="data1-2">
+					
+				</div>
+			</div>
+			<div id="data2"></div>
+			<div id="data3"></div>
+		</div>
+		<script>
+			let dataObj = new DataBinder({
+				el:"#data",
+				data:{
+					varA:{name:"wang",age:3},
+					varB:"hello",
+					myClass:"bg-pink",
+					color:"红色",
+					name:"Tom",
+					toggle:true
+				},
+				methods:{
+					myClick:function(){
+						if(this.data.toggle){
+							this.data.myClass = "bg-red";
+						}else{
+							this.data.myClass = "bg-pink";
+						}
+						this.data.toggle = !this.data.toggle;
+					}
+				}
+			});
+			
+		    setTimeout(function(){
+				dataObj.data.name = "王宇2333333333333";
+				dataObj.data.myClass = "bg-red";
+			},2000)
+		
+		</script>
+	</body>
+</html>
